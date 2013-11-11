@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>OpenYouTube</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/core.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+<link rel="stylesheet" type="text/css" href="css/webfont.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui.min.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+<div id="body-container" class="hide-sidebar hide-search">
+	<div id="masthead">
+		<div class="container">
+			<i id="search-icon" class="icon icon-search clickable no-select left"></i>
+			<i id="playlist-icon" class="icon first icon-subtle icon-list clickable no-select left"><span id="playlist-count">0</span></i>
+<!-- 			<div id="now-playing" class="hidden-tablet hidden-phone"></div> -->
+			<i id="watch-history-icon" class="icon icon-history clickable no-select right"></i>
+		</div>
+	</div>
+	<div id="playlist" class="hidden close-on-play">
+		<div id="playlist-inner-wrap">
+			<div class="message-empty">
+				Your playlist is empty.
+			</div>
+			<ul id="playlist-list" class="unlisted yta-list playlist-list">
+
+			</ul>
+		</div>
+	</div>
+	<div id="watch-history" class="hidden close-on-play">
+		<div id="watch-history-header">
+			<h5 class="text-thin">Recently Watched Videos</h5>
+		</div>
+		<div id="watch-history-inner-wrap">
+			<ul id="watch-history-list" class="unlisted yta-list history-list">
+			</ul>
+		</div>
+	</div>
+
+	<div id="search-container" class="close-on-play">
+		<div id="search" class="search-inner-wrap">
+			<form id="search-input">
+				<input type="text" placeholder="Search..." id="search-query" />
+				<i id="search-submit" class="icon-search clickable no-select"></i>
+			</form>
+		</div>
+		<div id="search-results" class="search-inner-wrap scroll-selected">
+			<div id="search-results-header" class="list-header"></div>
+			<ul id="results-list" class="unlisted yta-list">
+
+			</ul>
+			<div id="search-load-trigger"></div>
+		</div>
+	</div>
+
+	<div id="viewer-container">
+	</div>
+</div>
+</body>
+</html>

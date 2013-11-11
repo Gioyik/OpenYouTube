@@ -1,0 +1,616 @@
+/*============================================================================
+	Class: Helpers
+  ============================================================================*/
+
+::selection {
+	background: #FF9500;
+}
+
+.no-select {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.icon {
+	display: inline-block;
+	font-size: 21px;
+	padding: 8px;
+	position: relative;
+	text-align: center;
+}
+
+/*============================================================================
+	Structure: Body
+  ============================================================================*/
+
+body {
+	background: #000;
+}
+
+#body-container {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,0.10),inset 0 -1px 0 rgba(0,0,0,0.07);
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 1px 0px 0px rgba(0,0,0,0.1); 
+}
+
+#body-container.fullscreen #search-container {
+	left: 0;
+	width: 0;
+	border: none;
+}
+
+#body-container.fullscreen #viewer-container {
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+#body-container.fullscreen #sidebar-container {
+	right: 0;
+	width: 0;
+	border: none;
+}
+
+/*============================================================================
+	Structure: Masthead
+  ============================================================================*/
+
+#masthead {
+	background: #fff;
+	border-bottom: 3px solid #FF9500;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 999999;
+}
+
+#body-container.fullscreen #masthead {
+	top: -60px;
+}
+
+#masthead .container {
+	overflow: hidden;
+	max-width: 100%;
+}
+
+#masthead .icon {
+	display: block;
+	padding: 14px 8px;
+	width: 33px;
+	height: 22px;
+	margin: 0;
+}
+
+#masthead .icon.left {
+	float: left;
+}
+
+#masthead .icon.right {
+	float: right;
+}
+
+#body-container.fullscreen #masthead .icon.active {
+	background: inherit;
+	box-shadow: none;
+}
+
+#body-container.fullscreen #masthead #fullscreen-icon.active,
+#masthead .icon.active {
+	background: #fff;
+	box-shadow: 0 2px 0 rgba(0,0,0,0.2) inset;
+}
+
+#masthead .icon:hover {
+	color: #111;
+}
+
+#masthead #now-playing {
+	float: left;
+	max-width: 620px;
+	overflow: hidden;
+	padding: 14px 10px 13px;
+	white-space: nowrap;
+}
+
+/*============================================================================
+	Structure: Search
+  ============================================================================*/
+
+#search {
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0px;
+	z-index: 3;
+	padding: 10px 20px;
+	height: 42px;
+}
+
+#search-container {
+	background: #fff;
+	border-right: 1px solid #ddd;
+	position: fixed;
+	top: 51px;
+	left: 0;
+	z-index: 2;
+	width: 280px;
+	bottom: 0;
+	overflow-y: auto;
+}
+
+#search form,
+#search input {
+	margin: 0;
+}
+
+#search input {
+	left: 10px;
+	right: 10px;
+	padding: 10px 50px 10px 3px;
+	position: absolute;
+	border-radius: 100px;
+}
+
+#search-submit {
+	background: #F3F3F5;
+	border-radius: 100px;
+	-webkit-border-top-left-radius: none;
+	-webkit-top-top-left-radius: none;
+	border-bottom-left-radius: none;
+	border-top-left-radius: none;
+	border: 1px solid #ddd;
+	color: #444;
+	font-size: 16px;
+	height: 16px;
+	line-height: 1;
+	padding: 12px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 16px;
+}
+
+#search-submit:hover {
+	background: #F5F5F5;
+	color: #111;
+}
+
+#search-results {
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 63px;
+	z-index: 3;
+	bottom: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#search-results.subtle {
+	opacity: 0.4;
+}
+
+#search-results ul {
+	padding: 0;
+}
+
+#search-results-header {
+	margin: 0 0 10px;
+	padding: 0 10px 0px;
+}
+
+#body-container.hide-search #search-container {
+	width: 0px;
+	left: -1px;
+}
+
+#body-container.hide-search #search,
+#body-container.hide-search #search-results {
+	display: none;
+}
+
+
+/*============================================================================
+	Structure: Viewer
+  ============================================================================*/
+
+#viewer-container {
+	bottom: 0;
+	left: 281px;
+	position: absolute;
+	right: 281px;
+	top: 51px;
+	z-index: 2;
+}
+
+#viewer-container iframe {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+#body-container.hide-search #viewer-container {
+	left: 0px;
+}
+
+#body-container.hide-sidebar #viewer-container {
+	right: 0px;
+}
+
+/*============================================================================
+	Structure: Sidebar
+  ============================================================================*/
+
+#sidebar-container {
+	background: #fff;
+	border-left: 1px solid #ddd;
+	bottom: 0;
+	position: fixed;
+	right: 0px;
+	top: 51px;
+	width: 280px;
+	z-index: 3;
+}
+
+#sidebar {
+	padding: 20px;
+}
+
+#sidebar-header {
+	border-bottom: 1px solid #ddd;
+	height: 40px;
+	left: 0;
+	padding: 0 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#sidebar-inner-container {
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	right: 0;
+	top: 41px;
+}
+
+#body-container.hide-sidebar #sidebar-container {
+	width: 0px;
+	right: -1px;
+}
+
+/*============================================================================
+	Elements: Modals
+  ============================================================================*/
+#modal-cover {
+	background: rgba(0,0,0,0.6);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 99998;
+}
+
+/*============================================================================
+	Elements: Masthead - Playlist Icon
+  ============================================================================*/
+
+#playlist-count {
+	background: #000;
+	border-radius: 10px;
+	color: #FFF;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 1;
+	min-height: 11px;
+	min-width: 11px;
+	padding: 2px 3px 3px;
+	position: absolute;
+	right: -9px;
+	text-align: center;
+	top: 4px;
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+}
+
+#playlist-count.update {
+	background: #FF9500;
+}
+
+/*============================================================================
+	Elements: The Lists Base
+  ============================================================================*/
+
+.yta-list li {
+	background: #FFF;
+	cursor: pointer;
+	margin: 0px;
+	padding: 10px 0 10px 0;
+	overflow: hidden;
+}
+
+.yta-list .content {
+	overflow: hidden;
+	margin: 0px 10px;
+}
+
+.yta-list .title,
+.yta-list .user,
+.yta-list .views {
+	padding-bottom: 5px;
+}
+
+.yta-list .title {
+	font-size: 13px;
+	line-height: 16px;
+}
+
+.yta-list .title:hover {
+	color: #2793e6;
+}
+
+.yta-list .thumbnail {
+	position: relative;
+}
+
+.yta-list .thumbnail img {
+	width: 100%;
+}
+
+.yta-list .thumbnail .add-to-playlist {
+	cursor: pointer;
+	padding: 0px;
+	color: #fff;
+	display: none;
+	font-size: 18px;
+	left: 5px;
+	line-height: 1;
+	position: absolute;
+	top: 5px;
+}
+
+.yta-list li:hover .add-to-playlist {
+	display: block;
+}
+
+.yta-list .user,
+.yta-list .views {
+	font-size: 0.785em;
+	line-height: 1;
+}
+
+.yta-list .user span:hover {
+	text-decoration: underline;
+}
+
+.yta-list .selected {
+	background: #FF9500;
+	color: white;
+	opacity: 1 !important;
+}
+
+.yta-list .selected .title:hover {
+	color: #FFF;
+}
+
+.yta-list .watched {
+	opacity: 0.7;
+}
+
+
+/*============================================================================
+	Elements: The Playlist
+  ============================================================================*/
+
+#playlist {
+	background: white;
+	border: 1px solid #ccc;
+	left: 50px;
+	margin: 0;
+	min-height: 50px;
+	min-width: 69%;
+	position: fixed;
+	top: 50px;
+	width: 40%;
+	z-index: 99999;
+}
+
+#playlist-inner-wrap {
+	max-height: 400px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+}
+
+#playlist .message-empty {
+	color: #999;
+	font-style: italic;
+	padding: 20px 20px;
+}
+
+#playlist-list {
+	padding: 0;
+	margin: 0;
+}
+
+#playlist-list li {
+	border-bottom: 1px solid #ddd;
+}
+
+#playlist-list li:last-of-type {
+	border: none;
+}
+
+#playlist-list .thumbnail {
+	float: left;
+	overflow: hidden;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 70px;
+	height: 38px;
+}
+
+#playlist-list .thumbnail img {
+	margin-top: -7px;
+}
+
+#playlist-list .content {
+	overflow: hidden;
+}
+
+#body-container.fullscreen #playlist {
+	top: 0;
+}
+
+/*============================================================================
+	Elements: The Related List
+  ============================================================================*/
+
+#related-list {
+	padding: 0;
+}
+
+#related-list li {
+	border-bottom: 1px solid #eee;
+}
+
+#related-list .thumbnail {
+	overflow: hidden;
+	margin: 0 auto 10px;
+	width: 250px;
+	height: 138px;
+}
+
+#related-list .thumbnail img {
+	margin-top: -25px;
+}
+
+/*============================================================================
+	Elements: The Results List
+  ============================================================================*/
+
+#results-list li {
+	border-top: 1px solid #eee;
+}
+
+#results-list .thumbnail {
+	float: left;
+	overflow: hidden;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 90px;
+	height: 52px;
+}
+
+#results-list .thumbnail img {
+	margin-top: -8px;
+}
+
+#results-list .views {
+	color: #999;
+}
+
+/*============================================================================
+	Elements: The Watch History
+  ============================================================================*/
+
+#watch-history {
+	background: white;
+	border-left: 1px solid #ccc;
+	bottom: 0;
+	right: 0px;
+	margin: 0;
+	width: 300px;
+	position: fixed;
+	top: 51px;
+	z-index: 99999;
+}
+
+#watch-history-header {
+	border-bottom: 1px solid #ddd;
+	height: 40px;
+	left: 0;
+	padding: 0 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#watch-history-inner-wrap {
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	right: 0;
+	top: 41px;
+}
+
+#watch-history .message-empty {
+	color: #999;
+	font-style: italic;
+	padding: 20px 20px;
+}
+
+#watch-history-list {
+	padding: 0;
+	margin: 0;
+}
+
+#watch-history-list li {
+	border-bottom: 1px solid #ddd;
+}
+
+#watch-history-list li:last-of-type {
+	border: none;
+}
+
+#watch-history-list .watched {
+	opacity: 1;
+}
+
+#watch-history-list .thumbnail {
+	float: left;
+	overflow: hidden;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 70px;
+	height: 38px;
+}
+
+#watch-history-list .thumbnail img {
+	margin-top: -7px;
+}
+
+#watch-history-list .content {
+	overflow: hidden;
+}
